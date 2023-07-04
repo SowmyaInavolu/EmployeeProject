@@ -65,15 +65,15 @@ public class EmployeeServiceImplementation implements EmployeeService {
 //			employeeRepository.save(employee);
 //		}
 
-		Employee oldEmployeeData = employeeRepository.findById(id).orElse(null);
-		if (oldEmployeeData != null) {
-			oldEmployeeData.setEmployeeName(updatedEmployee.getEmployeeName());
-			oldEmployeeData.setDesignation(updatedEmployee.getDesignation());
-			oldEmployeeData.setSalary(updatedEmployee.getSalary());
+		Employee oldEmployeeData1 = employeeRepository.findById(id).orElse(null);
+		if (oldEmployeeData1 != null) {
+			oldEmployeeData1.setEmployeeName(updatedEmployee.getEmployeeName());
+			oldEmployeeData1.setDesignation(updatedEmployee.getDesignation());
+			oldEmployeeData1.setSalary(updatedEmployee.getSalary());
 		}
-		employeeRepository.save(oldEmployeeData);
-		System.out.println(oldEmployeeData);
-		return oldEmployeeData;
+		employeeRepository.save(oldEmployeeData1);
+		System.out.println(oldEmployeeData1);
+		return oldEmployeeData1;
 	}
 
 	public EmployeeRepository getEmployeeRepository() {
