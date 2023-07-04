@@ -54,17 +54,6 @@ public class EmployeeServiceImplementation implements EmployeeService {
 
 	@Override
 	public Employee updateEmployee(long id, Employee updatedEmployee) {
-//		if (employee != null) {
-//
-//			updatedEmployee.forEach((key, value) -> {
-//				Field field = ReflectionUtils.findField(Employee.class, (String) key);
-//				assert field != null;
-//				field.setAccessible(true);
-//				ReflectionUtils.setField(field, employee, value);
-//			});
-//			employeeRepository.save(employee);
-//		}
-
 		Employee oldEmployeeData1 = employeeRepository.findById(id).orElse(null);
 		if (oldEmployeeData1 != null) {
 			oldEmployeeData1.setEmployeeName(updatedEmployee.getEmployeeName());
