@@ -61,7 +61,7 @@ public class EmployeeServiceImplementation implements EmployeeService {
 			oldEmployeeData.setSalary(updatedEmployee.getSalary());
 		}
 		employeeRepository.save(oldEmployeeData);
-		return oldEmployeeData;
+		return null;
 	}
 
 	public EmployeeRepository getEmployeeRepository() {
