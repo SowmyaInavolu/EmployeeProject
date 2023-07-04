@@ -54,15 +54,15 @@ public class EmployeeServiceImplementation implements EmployeeService {
 
 	@Override
 	public Employee updateEmployee(long id, Employee updatedEmployee) {
-		Employee oldEmployeeData2 = employeeRepository.findById(id).orElse(null);
-		if (oldEmployeeData2 != null) {
-			oldEmployeeData2.setEmployeeName(updatedEmployee.getEmployeeName());
-			oldEmployeeData2.setDesignation(updatedEmployee.getDesignation());
-			oldEmployeeData2.setSalary(updatedEmployee.getSalary());
+		Employee oldEmployeeData = employeeRepository.findById(id).orElse(null);
+		if (oldEmployeeData != null) {
+			oldEmployeeData.setEmployeeName(updatedEmployee.getEmployeeName());
+			oldEmployeeData.setDesignation(updatedEmployee.getDesignation());
+			oldEmployeeData.setSalary(updatedEmployee.getSalary());
 		}
-		employeeRepository.save(oldEmployeeData2);
-		System.out.println(oldEmployeeData2);
-		return oldEmployeeData2;
+		employeeRepository.save(oldEmployeeData);
+		System.out.println(oldEmployeeData);
+		return oldEmployeeData;
 	}
 
 	public EmployeeRepository getEmployeeRepository() {
